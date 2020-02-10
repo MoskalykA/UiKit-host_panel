@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cray-Dev.fr | Container-Host</title>
+    <link rel="stylesheet" href="http://194.9.172.5/css/app.css">
+    <link rel="stylesheet" href="http://194.9.172.5/css/uikit.min.css" />
+</head>
+<body>
+    
+    <div class="uk-card uk-card-default uk-width-1-1.5@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">
+                    <img class="uk-border-circle" width="40" height="40" src="https://www.ethersys.fr/img/hosting.svg">
+                </div>
+                <div class="uk-width-expand">
+                    <p class="uk-text-meta uk-margin-remove-top">NAME - IP</p>
+                </div>
+            </div>
+        </div>
+        <div class="uk-card-body">
+            <p class="uk-text-meta uk-margin-remove-top">Date d'expiration : <time datetime="2021-04-01T19:00">April 01, 2021</time></p>
+        </div>
+        <div class="uk-card-footer">
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #informations">Voir les informations</button>
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #panel">Accéder au panel</button>
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #change-offre">Changer d'offre</button>
+            <button class="uk-button uk-button-primary" type="button" uk-toggle="target: #renouveler">Renouveler</button>
+        </div>
+    </div>
+
+    <div id="informations" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Informations sur le produit</h2>
+            <p>Nom du produit: NOM</p>
+            <p>Adresse IP du produit: IP</p>
+            <p>Port du produit: PORT</p>
+            <p>Status: STATUS</p>
+            <p>Date d'expiration: DATE</p>
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
+            </p>
+        </div>
+    </div>
+
+    <div id="panel" uk-modal>
+        <div class=" uk-modal-full">
+            <div class="uk-card uk-card-default uk-width-1-1.5@m">
+                <div class="uk-card-header">
+                    <div class="uk-grid-small uk-flex-middle" uk-grid>
+                        <div class="uk-width-auto">
+                            <img class="uk-border-circle" width="40" height="40" src="https://www.ethersys.fr/img/hosting.svg">
+                        </div>
+                        <div class="uk-width-expand">
+                            <p class="uk-text-meta uk-margin-remove-top">NAME - IP</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-card-body">
+                    <p>Nom du produit: NOM</p>
+                    <p>Adresse IP du produit: IP</p>
+                    <p>Port du produit: PORT</p>
+                    <p>Status: STATUS</p>
+                    <p>Date d'expiration: DATE</p>
+                    <p>Espace restant: ESPACE</p>
+                    <p>Pourcent d'utilisation du CPU: POUCENT%</p>
+                    <br>
+                    <button class="uk-button uk-button-primary" uk-toggle="target: #backup">Prendre une backup</button>
+                </div>
+                <div class="uk-card-footer">
+                    <button class="uk-button uk-button-primary" type="button">Démarrer</button>
+                    <button class="uk-button uk-button-primary" type="button">Stopper</button>
+                    <button class="uk-button uk-button-primary" type="button">Forcer a stopper</button>
+                    <button class="uk-button uk-button-primary" type="button">Console</button>
+                    <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="change-offre" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Changer d'offre</h2>
+            <form>
+                <fieldset class="uk-fieldset">
+
+                    <div class="uk-margin">
+                        <select class="uk-select">
+                            <option>Offre 1 - Prix</option>
+                            <option>Offre 2 - Prix</option>
+                        </select>
+                    </div>
+
+                    <button class="uk-button uk-button-primary" type="submit">Changer</button>
+                </fieldset>
+            </form>
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
+            </p>
+        </div>
+    </div>
+
+    <div id="renouveler" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Renouveler l'offre</h2>
+            <form>
+                <fieldset class="uk-fieldset">
+
+                    <label>Veuillez confirmer le renouvelage de l'offre !</label>
+                    <br>
+                    <br>
+                    <button class="uk-button uk-button-primary" type="submit">Renouveler</button>
+                </fieldset>
+            </form>
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
+            </p>
+        </div>
+    </div>
+
+    <div id="backup" uk-modal>
+        <div class="uk-modal-dialog uk-modal-body">
+            <h2 class="uk-modal-title">Changer d'offre</h2>
+            <form>
+                <fieldset class="uk-fieldset">
+
+                    <div class="uk-margin">
+                        <select class="uk-select">
+                            <option>Backup 1 - Date</option>
+                            <option>Backup 2 - Date</option>
+                        </select>
+                    </div>
+
+                    <button class="uk-button uk-button-primary" type="submit">Prend la backup</button>
+                </fieldset>
+            </form>
+            <p class="uk-text-right">
+                <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
+            </p>
+        </div>
+    </div>
+
+    <script src="http://194.9.172.5/js/uikit.min.js"></script>
+    <script src="http://194.9.172.5/js/uikit-icons.min.js"></script>
+</body>
+</html>
