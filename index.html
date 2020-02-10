@@ -70,10 +70,10 @@
                     <button class="uk-button uk-button-primary" uk-toggle="target: #backup">Prendre une backup</button>
                 </div>
                 <div class="uk-card-footer">
-                    <button class="uk-button uk-button-primary" type="button">Démarrer</button>
-                    <button class="uk-button uk-button-primary" type="button">Stopper</button>
-                    <button class="uk-button uk-button-primary" type="button">Forcer a stopper</button>
-                    <button class="uk-button uk-button-primary" type="button">Console</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez démarrer le serveur !', 'primary', 'top-right', 6000)" type="button">Démarrer</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez stopper le serveur !', 'primary', 'top-right', 6000)" type="button">Stopper</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez forcer le serveur a se stopper !', 'primary', 'top-right', 6000)" type="button">Forcer a stopper</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez accéder a la console !', 'primary', 'top-right', 6000)" type="button">Console</button>
                     <button class="uk-button uk-button-default uk-modal-close" type="button">Fermer</button>
                 </div>
             </div>
@@ -83,7 +83,7 @@
     <div id="change-offre" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
             <h2 class="uk-modal-title">Changer d'offre</h2>
-            <form>
+            <form action="#">
                 <fieldset class="uk-fieldset">
 
                     <div class="uk-margin">
@@ -93,7 +93,7 @@
                         </select>
                     </div>
 
-                    <button class="uk-button uk-button-primary" type="submit">Changer</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez changer d\'offre !', 'primary', 'top-right', 6000)"  type="submit">Changer</button>
                 </fieldset>
             </form>
             <p class="uk-text-right">
@@ -111,7 +111,7 @@
                     <label>Veuillez confirmer le renouvelage de l'offre !</label>
                     <br>
                     <br>
-                    <button class="uk-button uk-button-primary" type="submit">Renouveler</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez renouveler l\'offre !', 'primary', 'top-right', 6000)" type="submit">Renouveler</button>
                 </fieldset>
             </form>
             <p class="uk-text-right">
@@ -122,7 +122,7 @@
 
     <div id="backup" uk-modal>
         <div class="uk-modal-dialog uk-modal-body">
-            <h2 class="uk-modal-title">Changer d'offre</h2>
+            <h2 class="uk-modal-title">Prendre une bckup</h2>
             <form>
                 <fieldset class="uk-fieldset">
 
@@ -133,7 +133,7 @@
                         </select>
                     </div>
 
-                    <button class="uk-button uk-button-primary" type="submit">Prend la backup</button>
+                    <button class="uk-button uk-button-primary uk-modal-close" onclick="Notification('Vous avez pris une backup !', 'primary', 'top-right', 6000)" type="submit">Prend la backup</button>
                 </fieldset>
             </form>
             <p class="uk-text-right">
@@ -144,5 +144,15 @@
 
     <script src="http://194.9.172.5/js/uikit.min.js"></script>
     <script src="http://194.9.172.5/js/uikit-icons.min.js"></script>
+    <script>
+        function Notification(message, status, pos, timeout) {
+            UIkit.notification({
+                message: message,
+                status: status,
+                pos: pos,
+                timeout: timeout
+            });
+        }
+    </script>
 </body>
 </html>
